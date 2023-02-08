@@ -1,12 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto se inició con [Crear aplicación React] (https://github.com/facebook/create-react-app).
 
-## 1.Install
+## 1.Instalar
 
 ### npm
 
 ```
 npm i
-or
+o
 npm i --legacy-peer-deps
 ```
 
@@ -16,7 +16,7 @@ npm i --legacy-peer-deps
 yarn install
 ```
 
-## 2.Start
+## 2.Iniciar
 
 ```sh
 npm start
@@ -24,19 +24,19 @@ or
 yarn start
 ```
 
-## 3.Build
+## 3.Compilar
 
 ```sh
 npm run build or yarn build
 ```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crea la aplicación para producción en la carpeta `build`.<br>
+Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
 
-The build is minified and the filenames include the hashes.<br>
+La compilación se minimiza y los nombres de archivo incluyen los hashes.<br>
 
-Your app is ready to be deployed.
+Su aplicación está lista para ser implementada.
 
-## User Guide
+## Guia de usuario
 
-You can find detailed instructions on using Create React App and many tips in [its documentation](https://facebook.github.io/create-react-app/).
+Puede encontrar instrucciones detalladas sobre el uso de la aplicación Create React y muchos consejos en [su documentación] (https://facebook.github.io/create-react-app/).
