@@ -35,13 +35,13 @@ export default function ModalGenerico(props) {
     // eslint-disable-next-line react/prop-types
     const { openModal, toggleShow, rowsData } = props;
     // eslint-disable-next-line react/prop-types
-    const nombre = props.busquedaTipo[1].tipo;
+    // const nombre = props.busquedaTipo[1].tipo;
     const [rowsFilter, setRowFilter] = useState({});
     // eslint-disable-next-line no-unused-vars
     const [columns, setColums] = useState([
         {
             field: 'codigo',
-            headerName: `${nombre}`,
+            headerName: 'Codigo',
             width: 150,
             headerClassName: 'super-app-theme--header'
         },

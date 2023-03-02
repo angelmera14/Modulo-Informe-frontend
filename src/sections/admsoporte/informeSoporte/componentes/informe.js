@@ -7,7 +7,20 @@ import { InformeSoporteContext } from '../contextos/informeSoporteContexto';
 
 const cabezera = [
   { field: 'nombre_empresa', headerName: 'Empresa', width: 200 },
-  { field: 'creado', headerName: 'Fecha', width: 130 },
+  {
+    field: 'creado',
+    headerName: 'Fecha',
+    width: 130,
+    valueFormatter: (params) => {
+      if (params.value == null) {
+        return '----';
+      }
+      if (`${params.value}`.trim().length === 0) {
+        return '----';
+      }
+      return String(params.value).substring(0,10);
+    },
+  },
   { field: 'nombre_contacto', headerName: 'Contacto', width: 200 },
   { field: 'tipo', headerName: 'Tipo', width: 130 },
   { field: 'descripcion', headerName: 'Requerimiento', width: 350 },
@@ -73,6 +86,7 @@ function InformeDatosSoportes() {
           }}
           columns={cabezera}
           rows={informe}
+          getRowId={(rows) => rows.idticket}
         />
       </div>
     </Box>
