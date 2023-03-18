@@ -37,7 +37,7 @@ const navConfig = [
       // },
       {
         title: 'Informe',
-        path: PATH_OPSISTEMA.informeSoporte,
+        path: PATH_OPSISTEMA.informe,
         icon: ICONS.analytics
       },
       // {
