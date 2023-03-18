@@ -557,11 +557,11 @@ function Informe() {
                                             Correo
                                         </Button>
                                     </Grid>
-                                    <Grid item md={1.2} sm={4} xs={12}>
+                                    {/* <Grid item md={1.2} sm={4} xs={12}>
                                         <Button disabled fullWidth variant="text" startIcon={<ViewComfyRoundedIcon />} onClick={() => { console.log(sxtabla.rows) }}>
                                             Excel
                                         </Button>
-                                    </Grid>
+                                    </Grid> */}
                                 </Grid>
                             </form>
                             <TablaDatos sx={sxtabla} style={style} />
