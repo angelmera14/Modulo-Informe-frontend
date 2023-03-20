@@ -94,6 +94,7 @@ export const PATH_DASHBOARD = {
 // RUTAS DEL SISTEMA
 export const PATH_OPSISTEMA = {
   inicio: path(ROOTS_SISTEMA, '/inicio'),
+  dashboard: path(ROOTS_SISTEMA, '/dashboard'),
   informe: path(ROOTS_SISTEMA, '/informe'),
   informeSoporte: path(ROOTS_SISTEMA, '/informesoporte'),
   requerimiento: {

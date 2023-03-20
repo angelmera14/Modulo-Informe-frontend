@@ -36,6 +36,11 @@ const navConfig = [
       //   icon: ICONS.ticket
       // },
       {
+        title: 'Inicio',
+        path: PATH_OPSISTEMA.dashboard,
+        icon: ICONS.analytics
+      },
+      {
         title: 'Informe',
         path: PATH_OPSISTEMA.informe,
         icon: ICONS.analytics
