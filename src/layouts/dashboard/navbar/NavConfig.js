@@ -38,7 +38,7 @@ const navConfig = [
       {
         title: 'Inicio',
         path: PATH_OPSISTEMA.dashboard,
-        icon: ICONS.analytics
+        icon: ICONS.kanban
       },
       {
         title: 'Informe',

@@ -1,43 +1,43 @@
-import { Grid, TextField, MenuItem, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography } from '@mui/material';
 import { DataGrid, esES } from '@mui/x-data-grid';
 import { IconoDataGrid } from '../../../components/admsoporte/IconoDataGrid';
 import { estilosdetabla, estilosdatagrid } from '../../../utils/admsoporte/estilos';
 import Page from '../../../components/Page';
-import { fCurrency } from '../../../utils/formatNumber';
+// import { fCurrency } from '../../../utils/formatNumber';
 import { BookingIllustration, DocIllustration, OrderCompleteIllustration } from '../../../assets';
 import TarjetaTotal from './componentes/TarjetaTotal';
 import TarjetaTotalHoy from './componentes/TarjetaTotalHoy';
-import ImgSoporte1 from '../../../assets/images/soporte/soporte_img1.png'
+import ImgSoporte1 from '../../../assets/images/soporte/soporte_img1.png';
 import ImgSoporte2 from '../../../assets/images/soporte/soporte_img2.png';
+import useDashboard from './hooks/useDashboard';
 
 // ----------------------------------------------------------------------
 const columnas1 = [
   {
-    field: 'producto',
+    field: 'operador',
     headerName: 'Operador',
-    width: 100,
+    width: 300,
   },
   {
-    field: 'nombre',
-    headerName: 'Soportes',
+    field: 'total_soporte',
+    headerName: 'Soportes Realizados',
     width: 300,
-  }
+  },
 ];
 const columnas2 = [
-    {
-      field: 'Tipo',
-      headerName: 'Tipo',
-      width: 100,
-    },
-    {
-      field: 'nombre',
-      headerName: 'Descripcion',
-      width: 300,
-    },
-    
-  ];
+  {
+    field: 'tipo_soporte',
+    headerName: 'Tipo',
+    width: 250,
+  },
+  {
+    field: 'total_soporte',
+    headerName: 'Total',
+    width: 300,
+  },
+];
 export default function Desktop() {
-//   const { datosInicio, empresas, empresa, tipoVenta, cambiarTipoVenta, cambiarEmpresa } = useInicio();
+  const { datos } = useDashboard();
   return (
     <Page title="Inicio">
       <Box m={3}>
@@ -80,49 +80,32 @@ export default function Desktop() {
             </Grid>
           </Grid> */}
           <Grid item xs={12} md={4}>
-            <TarjetaTotal
-              descripcion="Total Empresas"
-              valor={300}
-              icono={<DocIllustration />}
-            />
+            <TarjetaTotal descripcion="Total Empresas" valor={datos.total_empresa} icono={<DocIllustration />} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <TarjetaTotal
-              descripcion="Total Contactos"
-              valor={1000}
-              icono={<BookingIllustration />}
-            />
+            <TarjetaTotal descripcion="Total Contactos" valor={datos.total_contaco} icono={<BookingIllustration />} />
           </Grid>
           <Grid item xs={12} md={4}>
             <TarjetaTotal
               descripcion="Total Soporte (Año)"
-              valor={500}
+              valor={datos.total_soporte_anio}
               icono={<OrderCompleteIllustration />}
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <TarjetaTotalHoy
-              descripcion="Soportes del Dia"
-              valor={0}
-              imagen={ImgSoporte1}
-            />
+            <TarjetaTotalHoy descripcion="Soportes del Dia" valor={datos.total_soporte_hoy} imagen={ImgSoporte1} />
           </Grid>
           <Grid item xs={12} md={6}>
-            <TarjetaTotalHoy
-              descripcion="Soporte del Mes"
-              valor={0}
-              imagen={ImgSoporte2}
-            />
+            <TarjetaTotalHoy descripcion="Soporte del Mes" valor={datos.total_soporte_mes} imagen={ImgSoporte2} />
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h4">Soporte Realizados Por Operador(Hoy)</Typography>
+            <Typography variant="h4">Soporte Realizados Por Operador</Typography>
           </Grid>
           <Grid item xs={12}>
             <Box sx={estilosdetabla}>
               <div style={{ height: '35vh', width: '100%' }}>
                 <DataGrid
                   density="compact"
-                  rowHeight={28}
                   hideFooter
                   localeText={esES.components.MuiDataGrid.defaultProps.localeText}
                   sx={estilosdatagrid}
@@ -131,20 +114,19 @@ export default function Desktop() {
                   }}
                   getRowId={(r) => r.id}
                   columns={columnas1}
-                  rows={[]}
+                  rows={datos.soporte_operador.map((m, i) => ({ ...m, id: i }))}
                 />
               </div>
             </Box>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h4">Tipos de Soporte(Hoy)</Typography>
+            <Typography variant="h4">Tipos de Soporte Realizados</Typography>
           </Grid>
           <Grid item xs={12}>
             <Box sx={estilosdetabla}>
               <div style={{ height: '35vh', width: '100%' }}>
                 <DataGrid
                   density="compact"
-                  rowHeight={28}
                   hideFooter
                   localeText={esES.components.MuiDataGrid.defaultProps.localeText}
                   sx={estilosdatagrid}
@@ -153,7 +135,7 @@ export default function Desktop() {
                   }}
                   getRowId={(r) => r.id}
                   columns={columnas2}
-                  rows={[]}
+                  rows={datos.soporte_tipo_soporte.map((m, i) => ({ ...m, id: i }))}
                 />
               </div>
             </Box>

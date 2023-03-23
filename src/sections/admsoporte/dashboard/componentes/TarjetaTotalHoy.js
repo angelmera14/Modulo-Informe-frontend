@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import { Card, Typography, Stack, Box } from '@mui/material';
 // utils
-import { fCurrency } from '../../../../utils/formatNumber';
+// import { fCurrency } from '../../../../utils/formatNumber';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ function TarjetaTotalHoy(props) {
       <Stack direction="row" justifyContent="space-between" sx={{ mb: 3 }}>
         <div>
           <Typography sx={{ mb: 2, typography: 'subtitle2' }}>{descripcion}</Typography>
-          <Typography sx={{ typography: 'h3' }}>{fCurrency(valor)}</Typography>
+          <Typography sx={{ typography: 'h3' }}>{valor.toFixed(0)}</Typography>
         </div>
         <Box
           sx={{
