@@ -20,10 +20,11 @@ TarjetaTotal.propTypes = {
   icono: PropTypes.any,
   descripcion: PropTypes.string,
   valor: PropTypes.number,
+  esImg: PropTypes.bool,
 };
 
 function TarjetaTotal(props) {
-  const { descripcion, valor, icono } = props;
+  const { descripcion, valor, icono, esImg } = props;
   return (
     <RootStyle>
       <div>
@@ -32,17 +33,21 @@ function TarjetaTotal(props) {
           {descripcion}
         </Typography>
       </div>
-      <Box
-        sx={{
-          width: 120,
-          height: 120,
-          lineHeight: 0,
-          borderRadius: '50%',
-          bgcolor: 'background.neutral',
-        }}
-      >
-        {icono}
-      </Box>
+      {esImg ? (
+        <img alt="" src={icono} style={{ width: 130, height: 130, lineHeight: 0, borderRadius: '50%' }} />
+      ) : (
+        <Box
+          sx={{
+            width: 120,
+            height: 120,
+            lineHeight: 0,
+            borderRadius: '50%',
+            bgcolor: 'background.neutral',
+          }}
+        >
+          {icono}
+        </Box>
+      )}
     </RootStyle>
   );
 }

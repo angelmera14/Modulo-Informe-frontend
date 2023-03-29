@@ -9,6 +9,7 @@ import TarjetaTotal from './componentes/TarjetaTotal';
 import TarjetaTotalHoy from './componentes/TarjetaTotalHoy';
 import ImgSoporte1 from '../../../assets/images/soporte/soporte_img1.png';
 import ImgSoporte2 from '../../../assets/images/soporte/soporte_img2.png';
+import ImgTotalAnio from '../../../assets/images/soporte/total_anio_img.png';
 import useDashboard from './hooks/useDashboard';
 
 // ----------------------------------------------------------------------
@@ -89,7 +90,8 @@ export default function Desktop() {
             <TarjetaTotal
               descripcion="Total Soporte (Año)"
               valor={datos.total_soporte_anio}
-              icono={<OrderCompleteIllustration />}
+              icono={ImgTotalAnio}
+              esImg
             />
           </Grid>
           <Grid item xs={12} md={6}>

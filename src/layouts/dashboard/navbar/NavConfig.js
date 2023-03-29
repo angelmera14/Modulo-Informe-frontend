@@ -36,7 +36,7 @@ const navConfig = [
       //   icon: ICONS.ticket
       // },
       {
-        title: 'Inicio',
+        title: 'Panel de control',
         path: PATH_OPSISTEMA.dashboard,
         icon: ICONS.kanban
       },
